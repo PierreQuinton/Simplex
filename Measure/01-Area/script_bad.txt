@@ -1,0 +1,335 @@
+What is area ? 
+
+ 
+
+We learned that the area of a square is c*c, of a circle is pi*r^2 and a triangle is b*h/2 
+
+ 
+
+We also learned that we can cut them, add them (animation) 
+
+ 
+
+But we never had a definition of the area. 
+
+ 
+
+We had a pretty nice insight of it, every one knows but defining it it can be less trivial 
+
+ 
+
+Lets start at the begining 
+
+ 
+
+Like if we wanted to find by ourself  
+
+ 
+
+A good start in math is to start with a simple case 
+
+ 
+
+--- 
+
+ 
+
+Definir aire d'un carré, puis d'un rectangle 
+
+ 
+
+D'ailleurs l'aire c'est part définition en 2D (c'est plat, l'aire d'une sphere c'est autre chose) 
+
+ 
+
+On peut équiper l'axe avec x et y (animation apparait) 
+
+ 
+
+Carré apparait, aire de 1, on le dédouble et ensuite on le met a coté et aire de 2, un dernier avec plusieurs et gEnre 8x5 
+
+ 
+
+Si on déplkace, ça change rien (animation l axe x et y bouge, pas le carré, c'est la meme) 
+
+ 
+
+Et aussi couper en 4 et ça donne un quart de l'aire  
+
+ 
+
+On peut donc faire tous les rectangle et le mettre gémnéralement avec x1 x2 et y1 y2 et on remarque que l aire pour tous ces exemple c'est x2-x1 * y2-y1 qui est la forumule qu on connait tous (animation exemple pour gros teubé avec des valeurs) genre 2x3 
+
+ 
+
+(Et c'est la meme pour les réelles) peut etre meme que astérisque 
+
+ 
+
+On aimerait donc dire que un carré ou un rectangle ou meme un cercle c'est un ensemble de points et a partir de la on va dire que c'est toujours un ensemble de points un ensemble 
+
+ 
+
+Donc carré, rectangle, cercle, triangle c'est juste un ensemble de point parce que la ca va devenir difficile a decrire des formes chiantes genre celle la (animation grosse forme de merde) mais c'est uojoutrs un ensemble de point et son aire nous interesse 
+
+ 
+
+Donc mtn on a la definition d'une forme, c'est un ensemble de points (mais pas exactement parce que on dit implicitement qu une forme ça a une aire là alors que.... ya des ensembles qui n'ont pas de mesure mais ça c'est pour une aurte video 
+
+ 
+
+ 
+
+(ajouté après) 
+
+On voudrait aussi que l union de deux figures qui sont disjointes, son aire soit aussi très bien defini parce que... (animation maison triangle et carré) 
+
+ 
+
+ 
+
+ 
+
+"l'extention la plus simple a partir des rectangle c'est de faire une union de rectangle", c'est un ensemble elementaire 
+
+ 
+
+(((((petite video additionnelle avec les [] [[ ]] ][ et comme quoi meme le petit rectangle | il a une aire de 0 donc c'est comme si on le compait pas)))) 
+
+ 
+
+Donc il faut des rectangle avec des interval ouvert dans tous les sens  
+
+ 
+
+Ça permet juste d'avoir une frontiere entre lesrectangles qu on juxtapose 
+
+ 
+
+ 
+
+ 
+
+Donc l aire d'un truc disjoint EST defini, ça soit etre la somme des rectangles disjoint 
+
+ 
+
+ 
+
+ 
+
+C'est bien beau les rectangles mais le triangle, le rcercle et les autres truc chelou c'est pas vraiment encore bien defini 
+
+ 
+
+PAS CONTRE, ce qu on a tendence a trouver intuitif c'est que une forme qui est ccontenu dans une autre a une aire égale ou plus petite et ça, en plus d'etre intuitif, on peut le prouver 
+
+ 
+
+Visuelllement mais aussi..... 
+
+ 
+
+Si t'as un ensemble elementaire contenu dans un autre, on peut trouver un aurte ensemble elementaire qui est disjoint de l autre et donc leur somme c'est l autre et donc il est plus petit l aire 
+
+ 
+
+Preuve très visuelle (animation) 
+
+ 
+
+ 
+
+ 
+
+On va prendre le triangle (animation) et on va construire un triangle à l aide de rrectangle qui est cointenu,k montrer que c'est plus petit (animation) 
+
+ 
+
+ 
+
+ 
+
+Faudra parler de l'ingégrale mais apres 
+
+ 
+
+ 
+
+ 
+
+Dans l animation montrerer qu on peut couper les rectangle pour aller de plus en plus precis 
+
+ 
+
+ 
+
+De la meme maniere on peut faire avec plus grand ou egale 
+
+ 
+
+Si le triangle a une aire, elle doit etre entre les deux 
+
+ 
+
+(preuve visuelle aire triangle) 
+
+ 
+
+On peut faire pareil avec cercle et meme toute les figures 
+
+ 
+
+DONC VOILA LA mesure de jordan (micheal jordan) (ici il faudrait rappeler ce qu on veut qu elle ait comme propriété comme le tranlation invariant) et additiver et positive et c'est tt (et le prouver?) 
+
+ 
+
+ 
+
+ 
+
+We define inner and outer mesure 
+
+ 
+
+Inner mesure of a set E is given by the sup of lambda(A) A is elementary A est inferieur ou egale a E (a contenu dans e) 
+
+ 
+
+Outer mesure of a set E is given by the inf of lamdda(a) A is elementary (a contient e) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Un ensemble est mesurable si le inner et le outer vont vers la meme mesure (match) 
+
+ 
+
+ 
+
+Donc va bien avec triangle et cercle ( montrer preuve) 
+
+ 
+
+ 
+
+ 
+
+Petit résumé, on a defini pour les rectangle et que ça doit etre stable sous union additif 
+
+ 
+
+Donc en gros rectangle c'est bien pour tout mesurer 
+
+ 
+
+Et rectangle finalement avec les axes c'est ce qui est assez intuitif 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Complement..... ça donne une definition de l'aire  
+
+ 
+
+ 
+
+C'est la seule ??? 
+
+ 
+
+ 
+
+ 
+
+On a une mesure additif, translation invariant et qui donne une aire de 1 au carré unité 
+
+ 
+
+Et ben on peutprouver que ce sera exactement egale a ce qu on a montrer jusqu a mtn et que c'est la seule 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Complement 2 union d'ensemble comptable ? Est-ce qu on peut aller plus loin ? Et les priopriétés liées seront plus interessantes 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Avant on voulait un moyen de montrer l aire et la on termine par la definir 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Mais encore ? ??? Plus ????? 
+
+ 
+
+Ça peut donner de l aire a des integrales, mais pas a des limites ni a un ensemble qui a pour coordonneé des rationnels
