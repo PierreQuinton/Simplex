@@ -1,0 +1,10 @@
+IntroKnownArea:
+We were told in school that the area of a rectangle of side length c, is c^2, the area of a circle of radius r is pi r^2 and the area of a triangle of base b and height h is bh/2.
+
+IntroCutting:
+We were also told that if can cut a shape into pieces of which we know the area, then we can sum them to get the area of the larger shape.
+
+IntroConclusion:
+But in the end, the only definition of area we had, is through some examples and properties. Even though everybody knows what the area is, it feels like defining it is a bit more involved. The first question that someone with the quest of defining what the area is may wonder about is, what are the things we would like to compute the area of ? In other words, if the area is a property of a shape that is a positive value, then what is a shape ? Answering the question what is the area ? and what is a shape are closely related.
+
+

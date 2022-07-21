@@ -44,7 +44,7 @@ class IntroKnownArea(Scene):
     self.play(FadeOut(*sqrs,sqr_area,*circs,circ_area,*tris,tri_area))
     
 
-class IntroCuttingTranslate(Scene):
+class IntroCutting(Scene):
   def construct(self):
     # start with cutting a figure in two and adding their area
     opa = 0.4
@@ -72,8 +72,10 @@ class IntroCuttingTranslate(Scene):
     self.wait(1)
     self.clear()
     
-    # then do translation
-    
+
+class IntroConclusion(Scene):
+  def construct(self):
+    self.wait(5)
 
 class Exposition(Scene):
   def construct(self):
