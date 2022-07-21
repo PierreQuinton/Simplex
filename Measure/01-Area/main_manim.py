@@ -46,7 +46,34 @@ class IntroKnownArea(Scene):
 
 class IntroCuttingTranslate(Scene):
   def construct(self):
-    self.wait()
+    # start with cutting a figure in two and adding their area
+    opa = 0.4
+    col = BLUE
+    
+    points = [
+      [-1,2,0],
+      [0,2+math.sqrt(3),0],
+      [1,2,0],
+      [1,0,0],
+      [-1,0,0]
+    ]
+    total = Polygon(*points).set_fill(opacity=opa,color=col)
+    sqr = Polygon(points[0],*points[2:]).set_fill(opacity=opa,color=col)
+    tri = Polygon(*points[0:3]).set_fill(opacity=opa,color=col)
+    pos_tri = tri.get_center()
+    pos_sqr = sqr.get_center()
+    equal = Tex('$=$').move_to(0.6*DOWN)
+    plus = Tex('$+$').move_to(2.5*DOWN)
+    self.play(FadeIn(total))
+    self.play(FadeIn(sqr,tri))
+    self.play(sqr.animate.set_fill(color=RED).move_to(2*RIGHT+2.5*DOWN),
+              tri.animate.set_fill(color=GREEN).move_to(2*LEFT+2.5*DOWN),
+              FadeIn(equal, plus))
+    self.wait(1)
+    self.clear()
+    
+    # then do translation
+    
 
 class Exposition(Scene):
   def construct(self):
