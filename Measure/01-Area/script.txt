@@ -5,6 +5,8 @@ IntroCutting:
 We were also told that if can cut a shape into pieces of which we know the area, then we can sum them to get the area of the larger shape.
 
 IntroConclusion:
-But in the end, the only definition of area we had, is through some examples and properties. Even though everybody knows what the area is, it feels like defining it is a bit more involved. The first question that someone with the quest of defining what the area is may wonder about is, what are the things we would like to compute the area of ? In other words, if the area is a property of a shape that is a positive value, then what is a shape ? Answering the question what is the area ? and what is a shape are closely related.
+But in the end, the only definition of area we had, is through some examples and properties. Even though everybody knows what the area is, it feels like defining it is a bit more involved. The first question that someone with the quest of defining what the area is may wonder about is, what are the things we would like to compute the area of ? In other words, if the area is a property of a shape that is a positive value, then what is a shape ? Answering the question what is the area ? and what is a shape are closely related (intricated ?).
 
-
+Setup:
+We would like our area to be something that to shapes maps it's area which is a positive value. This is typically done using a function, let us call it lambda, we call S the set of shape, that we have to define, and it will give positive values. We would like S to contain rectangles, squares, triangles, circles, union of those. One way to characterise such shapes is to express them as a set of points, but those points have to be themself in some space, so let us take the Eucliden 2 dimensional space.
+With a little bit of exploration, we can find a definition of most of the shape we know as a set. For instance the triangle ABC can be defined as the following set, and this should be an element of S. Similarly S should contain the circle of center O and radius r that can be expressed as this set. Keep in mind that S is a collection of sets, all of which we would like to be able to give an area to.

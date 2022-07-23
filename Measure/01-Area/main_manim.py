@@ -1,4 +1,6 @@
 from manim import *
+from typing import Sequence
+import numpy as np
 import math
 
 class IntroKnownArea(Scene):
@@ -70,18 +72,33 @@ class IntroCutting(Scene):
               tri.animate.set_fill(color=GREEN).move_to(2*LEFT+2.5*DOWN),
               FadeIn(equal, plus))
     self.wait(1)
-    self.clear()
-    
 
 class IntroConclusion(Scene):
   def construct(self):
     self.wait(5)
 
-class Exposition(Scene):
+class Setup(Scene):
   def construct(self):
-    self.wait()
-
-class Rectangle_Area(Scene):
-  def construct(self):
-    self.wait()
+    func = Tex('$\\lambda:S\\to [0,\\infty[$', font_size=144)
+    self.play(FadeIn(func))
+    self.wait(1)
+    plane_offset=3.5*LEFT
+    x_l = 8
+    y_l = 7
+    plane = Axes(x_range=(-1,x_l-1,1),y_range=(-1,y_l-1,1),x_length=x_l,y_length=y_l).shift(plane_offset)
+    self.play(FadeIn(plane), func.animate.scale(1/3).shift(4*RIGHT+2.5*UP))
+    def to_plane(o):
+      o.move_to(plane.c2p(*o.get_center()))
+      return o
+    tri_pos = np.array([
+      [1,1,0],
+      [2,3,0],
+      [4,2,0]
+    ])
+    tri = to_plane(Polygon(*tri_pos,color=YELLOW).set_fill(color=YELLOW,opacity=0.8))
+    tri_a = to_plane(Tex('A',font_size=40).next_to(tri_pos[0],0.6*LEFT))
+    tri_b = to_plane(Tex('B',font_size=40).next_to(tri_pos[1],0.6*UP))
+    tri_c = to_plane(Tex('C',font_size=40).next_to(tri_pos[2],0.6*RIGHT))
+    self.play(FadeIn(tri,tri_a,tri_b,tri_c))
+    self.wait(2)
 
