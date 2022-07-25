@@ -62,8 +62,6 @@ class IntroCutting(Scene):
     total = Polygon(*points).set_fill(opacity=opa,color=col)
     sqr = Polygon(points[0],*points[2:]).set_fill(opacity=opa,color=col)
     tri = Polygon(*points[0:3]).set_fill(opacity=opa,color=col)
-    pos_tri = tri.get_center()
-    pos_sqr = sqr.get_center()
     equal = MathTex(r'=').move_to(0.6*DOWN)
     plus = MathTex(r'+').move_to(2.5*DOWN)
     self.play(FadeIn(total))
@@ -134,6 +132,31 @@ class Setup(Scene):
       Transform(tri3,circ3),
       Transform(tri4,circ4),
       FadeOut(tri_a,tri_b,tri_c))
+    
+    self.play(FadeOut(tri2,tri3,tri4,circ_eq, tri_in_S_lambda,tri_eq))
+    
+    circ2 = [circ1.copy(),circ_r_tex.copy(),MathTex(r"O+x", font_size=30).next_to(circ_r,0.5*UP).shift(0.5*LEFT),circ_r.copy()]
+    direction = 2.7*UP+1.8*RIGHT
+    vec_x = Vector(direction,stroke_width=1.5,max_tip_length_to_length_ratio=0.07).shift(circ1.get_center())
+    vec_x_init = Vector(ORIGIN).shift(circ1.get_center())
+    
+    self.add(vec_x_init)
+    #why is the circle in front ?
+    self.play(*[a.animate.shift(direction).set_color(RED).set_fill(color=RED) for a in circ2],
+      Transform(vec_x_init, vec_x))
+    
+    eq_circles_same_area = MathTex(r'\lambda({{x}}) = \lambda({{x}}) ',font_size=35).shift(3*RIGHT+1.5*UP)
+    eq_circles_same_area[1].set_color(BLACK).set_fill(opacity=0)
+    eq_circles_same_area[3].set_color(BLACK).set_fill(opacity=0)
+    small_blue = circ1.copy()
+    small_red = circ2[0].copy()
+    
+    
+    self.play(Write(eq_circles_same_area),
+      small_blue.animate.scale(0.1).move_to(eq_circles_same_area[1].get_center()),
+      small_red.animate.scale(0.1).move_to(eq_circles_same_area[3].get_center()))
+    
+    
     
     self.wait(2)
 
