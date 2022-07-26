@@ -77,7 +77,7 @@ class IntroConclusion(Scene):
 
 class Setup(Scene):
   def construct(self):
-    func = MathTex(r'\lambda:{{S}}\to [0,\infty[', font_size=144)
+    func = MathTex(r'\lambda:{{\mathcal S}}\to [0,\infty[', font_size=144)
     self.play(Write(func))
     self.wait(1)
     plane_offset=3.5*LEFT
@@ -108,7 +108,7 @@ class Setup(Scene):
     self.add(tri2)
     self.play(tri2.animate.move_to(tri_eq[0].get_center()).scale(0.1),Write(tri_eq))
     
-    tri_in_S_lambda = MathTex(r'{{x}} &\in S\\\lambda({{x}})&\in [0,\infty[').next_to(tri_eq,2*DOWN)
+    tri_in_S_lambda = MathTex(r'{{x}} &\in \mathcal S\\\lambda({{x}})&\in [0,\infty[').next_to(tri_eq,2*DOWN)
     tri_in_S_lambda[0].set_color(BLACK).set_fill(opacity=0)
     tri_in_S_lambda[2].set_color(BLACK).set_fill(opacity=0)
     tri3 = tri2.copy()
@@ -155,8 +155,18 @@ class Setup(Scene):
     self.play(Write(eq_circles_same_area),
       small_blue.animate.scale(0.1).move_to(eq_circles_same_area[1].get_center()),
       small_red.animate.scale(0.1).move_to(eq_circles_same_area[3].get_center()))
-    
-    
+    self.play(small_red.animate.set_fill(color=BLUE).set_color(BLUE),Transform(eq_circles_same_area[4],MathTex(r'+x)',font_size=35).next_to(eq_circles_same_area[3],0.3*RIGHT)))
+    def_mink_sum = MathTex(r'{{x}}+x=\{ p+x : p\in{{x}} \}',font_size=35).next_to(eq_circles_same_area,DOWN)
+    def_mink_sum[0].set_color(BLACK).set_fill(opacity=0)
+    def_mink_sum[2].set_color(BLACK).set_fill(opacity=0)
+    small_red2 = small_red.copy()
+    small_blue2 = small_blue.copy()
+    self.play(Write(def_mink_sum), small_red2.animate.move_to(def_mink_sum[0].get_center()),
+      small_blue2.animate.move_to(def_mink_sum[2].get_center()))
+    list_small_blue = [small_red,small_blue,small_red2,small_blue2]
+    for_all_A = MathTex(r'\forall A\in\mathcal S,').next_to(eq_circles_same_area,LEFT)
+    self.play(*[Transform(a,MathTex(r'A',font_size=35).move_to(a.get_center()+0.05*UP)) for a in list_small_blue],
+      Write(for_all_A))
     
     self.wait(2)
 
